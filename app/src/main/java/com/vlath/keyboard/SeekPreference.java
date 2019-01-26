@@ -11,10 +11,13 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.TextView;
+import android.util.Log;
 
 public class SeekPreference extends Preference implements OnSeekBarChangeListener {
     private SeekBar mSeekBar;
     private int mProgress;
+    private int mMaxValue;
 
     public SeekPreference(Context context) {
         this(context, null, 0);
@@ -27,6 +30,14 @@ public class SeekPreference extends Preference implements OnSeekBarChangeListene
     public SeekPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         setLayoutResource(R.layout.seek_dialog);
+        // TODO: Does not work
+        mMaxValue = attrs.getAttributeIntValue("", "maxValue", 100);
+        Log.i("maxValue", "Got the maxValue '" + Integer.toString(mMaxValue) + "'");
+    }
+
+    private void setValueLabel(View view, int value) {
+        ((TextView) view.findViewById(R.id.seekbar_value))
+                .setText(Integer.toString(mSeekBar.getProgress()));
     }
 
     @Override
@@ -34,7 +45,11 @@ public class SeekPreference extends Preference implements OnSeekBarChangeListene
         super.onBindView(view);
         mSeekBar = (SeekBar) view.findViewById(R.id.seekbar);
         mSeekBar.setProgress(mProgress);
+        mSeekBar.setMax(mMaxValue);
         mSeekBar.setOnSeekBarChangeListener(this);
+
+        // Initial setting of the value TextView
+        setValueLabel(view, mSeekBar.getProgress());
     }
 
     @Override
@@ -43,6 +58,7 @@ public class SeekPreference extends Preference implements OnSeekBarChangeListene
             return;
 
         setValue(progress);
+        setValueLabel(seekBar.getRootView(), seekBar.getProgress());
     }
 
     @Override

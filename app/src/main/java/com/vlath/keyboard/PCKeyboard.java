@@ -662,7 +662,8 @@ public class PCKeyboard extends InputMethodService
     public void onPress(int primaryCode) {
         if(PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getBoolean("vib", false)) {
             Vibrator v = (Vibrator) getBaseContext().getSystemService(Context.VIBRATOR_SERVICE);
-            v.vibrate(40);
+            int duration = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getInt("vib_dur", 11);
+            v.vibrate(duration);
         }
     }
 

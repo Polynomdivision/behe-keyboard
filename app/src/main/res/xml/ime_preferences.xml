@@ -40,6 +40,11 @@
     <SwitchPreference android:title="@string/vib"
         android:key="vib"
         android:defaultValue="false" />
+    <com.vlath.keyboard.SeekPreference
+        android:defaultValue="11"
+        maxValue="100"
+        android:key="vib_dur"
+        android:title="Vibratation duration (ms)" />
 
     <SwitchPreference android:title="@string/borders"
         android:key="bord"
@@ -56,11 +61,14 @@
     <SwitchPreference android:title="Number keys on standard layout"
         android:key="nbr_qrt"
         android:defaultValue="false" />
+
     <SwitchPreference android:title="Long press to trigger IME selection"
         android:key="lp_ime_qrt"
         android:defaultValue="false" />
+
     <com.vlath.keyboard.SeekPreference
-        android:defaultValue="50"
+        android:defaultValue="30"
+        maxValue="50"
         android:key="height"
         android:title="Key Height" />
 
