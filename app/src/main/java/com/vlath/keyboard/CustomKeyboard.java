@@ -18,6 +18,7 @@ import android.graphics.Paint;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.Keyboard.Key;
 import android.inputmethodservice.KeyboardView;
+import android.preference.PreferenceManager;
 import android.view.inputmethod.InputMethodManager;
 import android.os.Vibrator;
 import android.util.AttributeSet;
@@ -55,9 +56,11 @@ public class CustomKeyboard extends KeyboardView {
         if (key.codes[0] == Keyboard.KEYCODE_CANCEL) {
             getOnKeyboardActionListener().onKey(LatinKeyboard.KEYCODE_OPTIONS, null);
             return true;
-        } else if (key.codes[0] == -101){
-            ((InputMethodManager) this.getContext().getSystemService(Context.INPUT_METHOD_SERVICE)).showInputMethodPicker();
-            return true;
+        } else if (key.codes[0] == -101) {
+            if (PreferenceManager.getDefaultSharedPreferences(this.getContext()).getBoolean("lp_ime_qrt", false)) {
+                ((InputMethodManager) this.getContext().getSystemService(Context.INPUT_METHOD_SERVICE)).showInputMethodPicker();
+                return true;
+            }
         }
         return super.onLongPress(key);
     }
