@@ -18,6 +18,7 @@ import android.graphics.Paint;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.Keyboard.Key;
 import android.inputmethodservice.KeyboardView;
+import android.view.inputmethod.InputMethodManager;
 import android.os.Vibrator;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -53,6 +54,9 @@ public class CustomKeyboard extends KeyboardView {
     protected boolean onLongPress(Key key) {
         if (key.codes[0] == Keyboard.KEYCODE_CANCEL) {
             getOnKeyboardActionListener().onKey(LatinKeyboard.KEYCODE_OPTIONS, null);
+            return true;
+        } else if (key.codes[0] == -101){
+            ((InputMethodManager) this.getContext().getSystemService(Context.INPUT_METHOD_SERVICE)).showInputMethodPicker();
             return true;
         }
         return super.onLongPress(key);
