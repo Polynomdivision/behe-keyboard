@@ -42,7 +42,7 @@
         android:defaultValue="false" />
     <com.vlath.keyboard.SeekPreference
         android:defaultValue="11"
-        maxValue="100"
+        android:max="100"
         android:key="vib_dur"
         android:title="Vibratation duration (ms)" />
 
@@ -68,7 +68,7 @@
 
     <com.vlath.keyboard.SeekPreference
         android:defaultValue="30"
-        maxValue="50"
+        android:max="50"
         android:key="height"
         android:title="Key Height" />
 

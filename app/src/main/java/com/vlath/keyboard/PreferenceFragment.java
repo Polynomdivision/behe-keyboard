@@ -3,7 +3,6 @@ package com.vlath.keyboard;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.*;
-import android.preference.Preference;
 
 /**
  * Created by todo on 30.06.2017.

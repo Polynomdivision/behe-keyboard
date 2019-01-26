@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:padding="1dp">
 
     <TextView
         android:id="@android:id/title"
@@ -14,17 +15,15 @@
 
     <SeekBar
         android:id="@+id/seekbar"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="80"
-        android:max="20" />
+        android:layout_weight="80" />
 
     <TextView
         android:id="@+id/seekbar_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="20"
-        android:textSize="18sp"
         />
 
 
