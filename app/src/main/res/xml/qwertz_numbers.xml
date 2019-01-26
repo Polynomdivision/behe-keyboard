@@ -24,7 +24,7 @@
         <Key android:codes="101" android:keyLabel="e" android:popupKeyboard="@xml/popup_template" android:popupCharacters="ĕḝȇêé" />
         <Key android:codes="114" android:keyLabel="r" android:popupKeyboard="@xml/popup_template" android:popupCharacters="ŕɍřŗṙ"/>
         <Key android:codes="116" android:keyLabel="t" android:popupKeyboard="@xml/popup_template" android:popupCharacters="ťṫţṭțṱṯ"/>
-        <Key android:codes="121" android:keyLabel="z" android:popupKeyboard="@xml/popup_template" android:popupCharacters="ýỳŷÿỹ" />
+        <Key android:codes="122" android:keyLabel="z" android:popupKeyboard="@xml/popup_template" android:popupCharacters="ýỳŷÿỹ" />
         <Key android:codes="117" android:keyLabel="u" android:popupKeyboard="@xml/popup_template" android:popupCharacters="ŭʉụǜü"/>
         <Key android:codes="105" android:keyLabel="i" android:popupKeyboard="@xml/popup_template" android:popupCharacters="íìĭîǐï"/>
         <Key android:codes="111" android:keyLabel="o" android:popupKeyboard="@xml/popup_template" android:popupCharacters="øǿȫóòö" />
@@ -43,7 +43,7 @@
     </Row>
     <Row>
         <Key android:codes="-1"   android:keyEdgeFlags="left" android:keyWidth="15%p" android:keyIcon="@drawable/ic_file_upload"/>
-        <Key android:codes="122" android:keyLabel="y" android:popupKeyboard="@xml/popup_template" android:popupCharacters="źẑžżẓ"/>
+        <Key android:codes="121" android:keyLabel="y" android:popupKeyboard="@xml/popup_template" android:popupCharacters="źẑžżẓ"/>
         <Key android:codes="120" android:keyLabel="x" android:popupKeyboard="@xml/popup_template" android:popupCharacters="ẍẋ"/>
         <Key android:codes="99" android:keyLabel="c" android:popupKeyboard="@xml/popup_template" android:popupCharacters="ćĉčċḉƈc̈ȼç"/>
         <Key android:codes="118" android:keyLabel="v" android:popupKeyboard="@xml/popup_template" android:popupCharacters="ṽṿ" />
